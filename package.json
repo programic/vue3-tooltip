@@ -1,0 +1,46 @@
+{
+  "name": "@programic/vue3-tooltip",
+  "version": "0.0.1",
+  "description": "An advanced tooltip plugin for Vue 3",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --config jest.config.json",
+    "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx"
+  },
+  "keywords": [
+    "vue3",
+    "nuxt3",
+    "tooltip"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/programic/vue3-tooltip"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "author": "Rick Bongers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/programic/vue3-tooltip/issues"
+  },
+  "homepage": "https://programic.com",
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "vue": "^3.2.40"
+  },
+  "devDependencies": {
+    "@programic/eslint-config-typescript": "^2.0.0",
+    "@types/jest": "^27.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.3",
+    "jest": "^27.3.1",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.5.2"
+  }
+}
