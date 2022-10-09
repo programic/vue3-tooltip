@@ -4,10 +4,10 @@ import Tooltip from './Tooltip.vue';
 import type { TooltipConfiguration } from './configurations.d';
 
 export default {
-  install: (app: App, options: TooltipConfiguration): void => {
+  install: (app: App, options: TooltipConfiguration = {}): void => {
     if (
-      (typeof options?.container === 'object' && options?.container?.enabled !== false)
-      || options?.container !== false
+        (typeof options?.container === 'object' && options?.container?.enabled !== false)
+        || options?.container !== false
     ) {
       let containerId = 'tooltip-container';
       let tooltipRootElement = document.createElement('div');
@@ -19,8 +19,8 @@ export default {
       tooltipRootElement.setAttribute('id', containerId);
 
       if (
-        typeof options?.container === 'object'
-        && options?.container?.ref instanceof HTMLDivElement
+          typeof options?.container === 'object'
+          && options?.container?.ref instanceof HTMLDivElement
       ) {
         tooltipRootElement = options?.container?.ref;
       }
@@ -38,7 +38,10 @@ export default {
         const wrappedChildren = children.map(child => {
           return h('span', null, [child]);
         });
-        const tooltipElement = h(Tooltip, { class: 'tooltip', title: _.value }, wrappedChildren);
+        const tooltipElement = h(Tooltip, {
+          class: 'tooltip',
+          title: _.value
+        }, wrappedChildren);
 
         createApp(tooltipElement).mount(element);
       },

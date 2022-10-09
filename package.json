@@ -1,8 +1,8 @@
 {
   "name": "@programic/vue3-tooltip",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An advanced tooltip plugin for Vue 3",
-  "main": "src/index.ts",
+  "main": "src",
   "types": "src/index.d.ts",
   "scripts": {
     "build": "tsc",
