@@ -4,12 +4,11 @@ import { v4 as uuid } from 'uuid';
 import Tooltip from './Tooltip.vue';
 
 import type {
-App,
-Plugin,
-DirectiveBinding,
-VNode,
+  App,
+  Plugin,
+  DirectiveBinding,
+  VNode,
 } from 'vue';
-
 import type { ContainerConfiguration, TooltipConfiguration } from './types/configurations';
 import type {
   TooltipButtonClick,
@@ -82,7 +81,7 @@ const plugin: Plugin = {
 export default plugin;
 
 export type {
- ContainerConfiguration,
+  ContainerConfiguration,
   TooltipConfiguration,
   TooltipButtonClick,
   TooltipButton,

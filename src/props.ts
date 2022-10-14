@@ -40,7 +40,7 @@ export default {
 
   title: {
     type: String as PropType<string>,
-    default: null,
+    required: true,
   },
 
   description: {
