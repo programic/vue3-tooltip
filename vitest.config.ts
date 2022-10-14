@@ -15,17 +15,13 @@ export default defineConfig({
     coverage: {
       include: ["src"],
       exclude: [
-        "src/tests",
+        "tests",
         "src/types",
-        "src/datasources/cosmos/defaults.ts",
         "**/*/types.ts",
-        "**/*/operations.ts",
-        "**/*/*.graphql.ts",
-        "**/*/*.test.ts",
+        "**/*/*.spec.ts",
         "**/*/__test__",
       ],
-      reportsDirectory: process.env.CI ? "coverage" : undefined,
-      reporter: process.env.CI ? "cobertura" : undefined,
+      reportsDirectory: 'coverage',
     },
   },
   resolve: {

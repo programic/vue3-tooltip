@@ -2780,12 +2780,17 @@ tinybench@^2.3.0:
   resolved "https://registry.yarnpkg.com/tinybench/-/tinybench-2.3.0.tgz#febb2e697c735c0cdb8eb1e43cb1d2fa1821f983"
   integrity sha512-zs1gMVBwyyG2QbVchYIbnabRhMOCGvrwZz/q+SV+LIMa9q5YDQZi2kkI6ZRqV2Bz7ba1uvrc7ieUoE4KWnGeKg==
 
+tinypool@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/tinypool/-/tinypool-0.2.4.tgz#4d2598c4689d1a2ce267ddf3360a9c6b3925a20c"
+  integrity sha512-Vs3rhkUH6Qq1t5bqtb816oT+HeJTXfwt2cbPH17sWHIYKTotQIFPk3tf2fgqRrVyMDVOc1EnPgzIxfIulXVzwQ==
+
 tinypool@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/tinypool/-/tinypool-0.3.0.tgz#c405d8b743509fc28ea4ca358433190be654f819"
   integrity sha512-NX5KeqHOBZU6Bc0xj9Vr5Szbb1j8tUHIeD18s41aDJaPeC5QTdEhK0SpdpUrZlj2nv5cctNcSjaKNanXlfcVEQ==
 
-tinyspy@^1.0.2:
+tinyspy@^1.0.0, tinyspy@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/tinyspy/-/tinyspy-1.0.2.tgz#6da0b3918bfd56170fb3cd3a2b5ef832ee1dff0d"
   integrity sha512-bSGlgwLBYf7PnUsQ6WOc6SJ3pGOcd+d8AA6EUnLDDM0kWEstC1JIlSZA3UNliDXhd9ABoS7hiRBDCu+XP/sf1Q==
@@ -2918,7 +2923,7 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vite@^3.0.0, vite@^3.1.8:
+"vite@^2.9.12 || ^3.0.0-0", vite@^3.0.0, vite@^3.1.8:
   version "3.1.8"
   resolved "https://registry.yarnpkg.com/vite/-/vite-3.1.8.tgz#fa29144167d19b773baffd65b3972ea4c12359c9"
   integrity sha512-m7jJe3nufUbuOfotkntGFupinL/fmuTNuQmiVE7cH2IZMuf4UbfbGYMUT3jVWgGYuRVLY9j8NnrRqgw5rr5QTg==
@@ -2930,7 +2935,7 @@ vite@^3.0.0, vite@^3.1.8:
   optionalDependencies:
     fsevents "~2.3.2"
 
-vitest@0.24.2, vitest@^0.24.1:
+vitest@0.24.2:
   version "0.24.2"
   resolved "https://registry.yarnpkg.com/vitest/-/vitest-0.24.2.tgz#7de6814512d0aa35dbbe4866bd74bc6d27568017"
   integrity sha512-ZKZaODrv/FzfOmcrnTt7SGwQODT/yXWi8tLa7+dV8fWlmG+Z0VaY4qHnpy2sMJXP6N2IRUXmsWGtDaIhUgk+XQ==
@@ -2946,6 +2951,21 @@ vitest@0.24.2, vitest@^0.24.1:
     tinypool "^0.3.0"
     tinyspy "^1.0.2"
     vite "^3.0.0"
+
+vitest@^0.21.1:
+  version "0.21.1"
+  resolved "https://registry.yarnpkg.com/vitest/-/vitest-0.21.1.tgz#b4f5b901c9a23a3aaec76d3404f3072821d93d00"
+  integrity sha512-WBIxuFmIDPuK47GO6Lu9eNeRMqHj/FWL3dk73OHH3eyPPWPiu+UB3QHLkLK2PEggCqJW4FaWoWg8R68S7p9+9Q==
+  dependencies:
+    "@types/chai" "^4.3.3"
+    "@types/chai-subset" "^1.3.3"
+    "@types/node" "*"
+    chai "^4.3.6"
+    debug "^4.3.4"
+    local-pkg "^0.4.2"
+    tinypool "^0.2.4"
+    tinyspy "^1.0.0"
+    vite "^2.9.12 || ^3.0.0-0"
 
 vue-eslint-parser@^9.0.1:
   version "9.1.0"
