@@ -4,8 +4,7 @@
 [![Bundle](https://flat.badgen.net/bundlephobia/minzip/@programic/vue3-tooltip)](https://bundlephobia.com/package/@programic/vue3-tooltip)
 [![codecov](https://codecov.io/gh/programic/vue3-tooltip/branch/main/graph/badge.svg?token=JGO4RKGOLB)](https://codecov.io/gh/programic/vue3-tooltip)
 
-[//]: # (![vt]&#40;https://i.imgur.com/i2PMcTq.gif&#41;)
-
+![vt](https://i.imgur.com/mnxkUUe.gif)
 ## Features
 
 - **Vue 3** compatible!
