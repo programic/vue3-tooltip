@@ -1,13 +1,37 @@
 {
   "name": "@programic/vue3-tooltip",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "An advanced tooltip plugin for Vue 3",
-  "main": "src",
-  "types": "src/index.d.ts",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
+    },
+    "./dist/index.css": {
+      "import": "./dist/index.css",
+      "require": "./dist/index.css"
+    }
+  },
+  "typings": "dist/types/index.d.ts",
+  "types": "dist/types/index.d.ts",
+  "style": "dist/index.css",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "sideEffects": true,
   "scripts": {
-    "build": "tsc",
+    "dev": "MODE=demo yarn vite",
+    "style": "postcss -o dist/index.css src/css/*.css -w",
+    "prebuild": "rimraf ./dist",
+    "build": "yarn build:code && yarn build:tsc && yarn build:style",
+    "build:code": "MODE=lib vite build",
+    "build:style": "MODE=lib postcss -o dist/index.css src/css/*.css",
+    "build:tsc": "NODE_ENV=production tsc --emitDeclarationOnly --project tsconfig.build.json",
     "test": "jest --config jest.config.json",
-    "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx,.vue"
   },
   "keywords": [
     "vue3",
@@ -18,9 +42,6 @@
     "type": "git",
     "url": "https://github.com/programic/vue3-tooltip"
   },
-  "files": [
-    "dist/**/*"
-  ],
   "author": "Rick Bongers",
   "license": "MIT",
   "bugs": {
@@ -29,18 +50,30 @@
   "homepage": "https://programic.com",
   "dependencies": {
     "@popperjs/core": "^2.11.6",
-    "vue": "^3.2.40"
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@programic/eslint-config-typescript": "^2.0.0",
-    "@types/jest": "^27.0.3",
+    "@programic/eslint-config-vue3-typescript": "^10.0.1",
+    "@programic/eslint-plugin": "^1.0.2",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
+    "@vitejs/plugin-vue": "^3.1.2",
+    "autoprefixer": "^10.4.12",
     "eslint": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.3",
-    "jest": "^27.3.1",
-    "ts-jest": "^27.0.7",
-    "typescript": "^4.5.2"
+    "eslint-plugin-vue": "^9.6.0",
+    "postcss": "^8.4.18",
+    "postcss-cli": "^10.0.0",
+    "postcss-import": "^15.0.0",
+    "postcss-nested": "^6.0.0",
+    "postcss-simple-vars": "^7.0.0",
+    "typescript": "^4.5.2",
+    "vite": "^3.1.8",
+    "vitest": "^0.24.1",
+    "vue": "^3",
+    "vue-tsc": "^1.0.7"
   }
 }

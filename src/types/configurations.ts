@@ -1,5 +1,5 @@
-import type { ComponentDefinition } from 'vue';
-import type { Placement } from './index.d';
+import type { Component } from 'vue';
+import type { Placement } from './tooltip';
 
 export interface ContainerConfiguration {
   enabled: boolean;
@@ -8,6 +8,6 @@ export interface ContainerConfiguration {
 
 export interface TooltipConfiguration {
   container?: ContainerConfiguration | boolean;
-  template?: string | ComponentDefinition;
+  template?: string | Component;
   placement?: Placement;
 }

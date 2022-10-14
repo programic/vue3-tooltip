@@ -5,9 +5,14 @@ import type {
   Sizes,
   Types,
   Placement,
-} from './index.d';
+} from './types/tooltip';
 
 export default {
+  id: {
+    type: String as PropType<string>,
+    default: null,
+  },
+
   reference: {
     type: HTMLElement as PropType<HTMLElement>,
     default: null,

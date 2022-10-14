@@ -1,0 +1,137 @@
+$dark-bg: #000;
+$light-bg: #fff;
+
+.tooltip {
+  width: 100vw;
+  box-shadow: 0px 0px 0px rgba(30, 30, 30, .5);
+  border-radius: .4rem;
+  border: 1px solid $(dark-bg);
+  max-width: 10rem;
+  background-color: $(dark-bg);
+  padding: .5rem .4rem;
+  width: max-content !important;
+
+  .tooltip-container {
+    position: relative;
+    height: 100%;
+
+    .title {
+      color: #fff;
+      font-size: .9rem;
+      line-height: .8rem;
+    }
+
+    .description {
+      color: #fff;
+      font-size: .8rem;
+    }
+
+    &::after {
+     content:'';
+     position: absolute;
+     top: 100%;
+     left: 50%;
+     margin-left: -8px;
+     margin-top: 8px;
+     width: 0;
+     height: 0;
+     border-top: solid 8px $dark-bg;
+     border-left: solid 8px transparent;
+     border-right: solid 8px transparent;
+    }
+  }
+
+  &[data-popper-placement="bottom"] {
+    .tooltip-container {
+      &::after {
+         top: auto;
+         bottom: 100%;
+         transform: rotate(180deg) translateY(9px)
+      }
+    }
+  }
+
+  &[data-popper-placement="right"] {
+    .tooltip-container {
+      &::after {
+       top: 50%;
+       left: 0;
+       bottom: 100%;
+       transform: rotate(90deg) translate(-10px, 9px);
+      }
+    }
+  }
+
+  &[data-popper-placement="left"] {
+    .tooltip-container {
+      &::after {
+       top: auto;
+       left: auto;
+       right: -9px;
+       bottom: 100%;
+       transform: rotate(-90deg) translate(-10px, 9px);
+      }
+    }
+  }
+
+  &[data-type="light"] {
+    border: 1px solid $light-bg;
+    background-color: $light-bg;
+
+    .tooltip-container {
+      .title {
+        color: #000;
+      }
+
+      .description {
+        color: #000;
+      }
+
+      &::after {
+        border-color: $light-bg;
+      }
+    }
+  }
+
+  &[data-size="medium"] {
+    max-width: 15rem;
+    padding: .7rem .6rem;
+
+    .tooltip-container {
+      .title {
+        font-size: 1rem;
+        line-height: .9rem;
+      }
+
+      .description {
+        color: #fff;
+        font-size: .8rem;
+      }
+
+      &::after {
+        margin-top: 12px;
+      }
+    }
+  }
+
+  &[data-size="large"] {
+    max-width: 15rem;
+    padding: .7rem .6rem;
+
+    .tooltip-container {
+      .title {
+        font-size: 1.2rem;
+        line-height: 1rem;
+      }
+
+      .description {
+        color: #fff;
+        font-size: 1rem;
+      }
+
+      &::after {
+        margin-top: 12px;
+      }
+    }
+  }
+}
