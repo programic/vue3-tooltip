@@ -12,6 +12,21 @@ export default defineConfig({
     transformMode: {
       web: [/.[jt]sx$/],
     },
+    coverage: {
+      include: ["src"],
+      exclude: [
+        "src/tests",
+        "src/types",
+        "src/datasources/cosmos/defaults.ts",
+        "**/*/types.ts",
+        "**/*/operations.ts",
+        "**/*/*.graphql.ts",
+        "**/*/*.test.ts",
+        "**/*/__test__",
+      ],
+      reportsDirectory: process.env.CI ? "coverage" : undefined,
+      reporter: process.env.CI ? "cobertura" : undefined,
+    },
   },
   resolve: {
     alias: {

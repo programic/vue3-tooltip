@@ -21,7 +21,6 @@
     "src",
     "dist"
   ],
-  "sideEffects": true,
   "scripts": {
     "dev": "MODE=demo yarn vite",
     "style": "postcss -o dist/index.css src/css/*.css -w",
@@ -31,6 +30,7 @@
     "build:style": "MODE=lib postcss -o dist/index.css src/css/*.css",
     "build:tsc": "NODE_ENV=production tsc --emitDeclarationOnly --project tsconfig.build.json",
     "test": "vitest --config vitest.config.ts",
+    "coverage": "vitest run --coverage",
     "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx,.vue"
   },
   "keywords": [
@@ -60,8 +60,10 @@
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "@vitejs/plugin-vue": "^3.1.2",
+    "@vitest/coverage-c8": "^0.24.2",
     "@vue/test-utils": "^2.1.0",
     "autoprefixer": "^10.4.12",
+    "c8": "^7.12.0",
     "eslint": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.3",

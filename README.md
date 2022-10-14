@@ -1,6 +1,7 @@
 # Vue 3 & Nuxt 3 Tooltip
 [![npm version](https://badge.fury.io/js/@programic%2Fvue3-tooltip.svg)](https://badge.fury.io/js/@programic%2Fvue3-tooltip)
 [![Vue 3](https://img.shields.io/badge/Vue-3-green)](https://img.shields.io/badge/Vue-3-green)
+[![codecov](https://codecov.io/gh/Maronato/vue-toastification/branch/master/graph/badge.svg)](https://codecov.io/gh/Maronato/vue-toastification)
 
 [//]: # (![vt]&#40;https://i.imgur.com/i2PMcTq.gif&#41;)
 
