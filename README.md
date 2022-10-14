@@ -63,6 +63,19 @@ const options: TooltipConfiguration = {
 app.use(Tooltip, options);
 ```
 
+Or, if you are using Nuxt 3:
+
+Create a tooltip.ts in the plugins folder with the following code
+```typescript
+// tooltip.ts
+import { defineNuxtPlugin } from "#app";
+import Tooltip from '@programic/vue3-tooltip';
+
+export default defineNuxtPlugin(nuxtApp => {
+    nuxtApp.vueApp.use(Tooltip)
+});
+```
+
 ### Creating tooltips by directive
 To create tooltips by directive, add v-tooltip on your element
 
