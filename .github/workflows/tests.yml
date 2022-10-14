@@ -46,11 +46,14 @@ jobs:
       - name: Lint
         run: yarn lint
 
+      - name: Test
+        run: yarn test
+
       - name: Install Codecov
         run: yarn global add codecov
 
-      - name: Test
-        run: yarn test
+      - name: Coverage
+        run: yarn coverage
 
       - name: Upload to Codecov
         uses: codecov/codecov-action@v2.1.0
