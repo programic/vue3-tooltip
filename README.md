@@ -1,7 +1,8 @@
 # Vue 3 & Nuxt 3 Tooltip
 [![npm version](https://badge.fury.io/js/@programic%2Fvue3-tooltip.svg)](https://badge.fury.io/js/@programic%2Fvue3-tooltip)
 [![Vue 3](https://img.shields.io/badge/Vue-3-green)](https://img.shields.io/badge/Vue-3-green)
-[![codecov](https://codecov.io/gh/Maronato/vue-toastification/branch/master/graph/badge.svg)](https://codecov.io/gh/Maronato/vue-toastification)
+[![Bundle](https://flat.badgen.net/bundlephobia/minzip/@programic/vue3-tooltip)](https://bundlephobia.com/package/@programic/vue3-tooltip)
+[![codecov](https://codecov.io/gh/programic/vue3-tooltip/branch/main/graph/badge.svg?token=JGO4RKGOLB)](https://codecov.io/gh/programic/vue3-tooltip)
 
 [//]: # (![vt]&#40;https://i.imgur.com/i2PMcTq.gif&#41;)
 
@@ -46,9 +47,11 @@ app.use(Tooltip, options);
 ```
 
 Or, if you are using Typescript:
-```javascript
+```typescript
 import { createApp } from "vue";
-import Tooltip, { TooltipConfiguration } from '@programic/vue3-tooltip';
+import Tooltip from '@programic/vue3-tooltip';
+import type { TooltipConfiguration } from '@programic/vue3-tooltip';
+
 // Import the CSS or use your own!
 import '@programic/vue3-tooltip/dist/index.css';
 
