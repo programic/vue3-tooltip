@@ -11,6 +11,7 @@ import type {
 } from 'vue';
 import type { ContainerConfiguration, TooltipConfiguration } from './types/configurations';
 import type {
+  CleanupAutoUpdate,
   TooltipButtonClick,
   TooltipButton,
   TriggerOptions,
@@ -81,6 +82,7 @@ const plugin: Plugin = {
 export default plugin;
 
 export type {
+  CleanupAutoUpdate,
   ContainerConfiguration,
   TooltipConfiguration,
   TooltipButtonClick,

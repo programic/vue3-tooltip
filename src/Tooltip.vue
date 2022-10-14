@@ -79,11 +79,21 @@
 <script lang="ts">
   // eslint-disable-next-line import/no-extraneous-dependencies
   import { defineComponent, inject, markRaw } from 'vue';
-  import { createPopper } from '@popperjs/core';
+  import {
+    computePosition,
+    autoUpdate,
+    flip,
+    inline,
+    offset,
+  } from '@floating-ui/dom';
   import props from './props';
 
-  import type { Instance } from '@popperjs/core';
-  import type { TooltipButton, TriggerOptions, Placement } from './types/tooltip';
+  import type {
+    TooltipButton,
+    TriggerOptions,
+    Placement,
+    CleanupAutoUpdate,
+  } from './types/tooltip';
   import type { TooltipConfiguration } from './types/configurations';
 
   export default defineComponent({
@@ -99,7 +109,7 @@
       return {
         isOpen: false,
         options: inject<TooltipConfiguration | null>('tooltipOptions', null),
-        popper: null as Instance | null,
+        cleanupAutoUpdate: null as CleanupAutoUpdate | null,
       };
     },
 
@@ -116,17 +126,13 @@
         return this.options?.container === false || this.container === false;
       },
 
-      popperPlacement(): Placement {
+      tooltipPlacement(): Placement {
         return this.placement ?? this.options?.placement ?? 'top';
       },
     },
 
-    mounted() {
-      this.initialize();
-    },
-
     beforeUnmount() {
-      this.popper?.destroy();
+      this.cleanupAutoUpdate?.();
     },
 
     methods: {
@@ -136,20 +142,26 @@
         const tooltip = this.$refs.tooltip as HTMLDivElement;
         const tooltipHolder = this.reference ?? this.$refs['tooltip-holder'] as HTMLElement;
 
-        this.popper = createPopper(tooltipHolder, tooltip, {
-          placement: this.popperPlacement,
-          strategy: 'absolute',
-          modifiers: [
-            {
-              name: 'offset',
-              options: {
-                offset: [0, 10],
-              },
-            },
-            {
-              name: 'arrow',
-            },
-          ],
+        this.cleanupAutoUpdate?.();
+        this.cleanupAutoUpdate = autoUpdate(tooltipHolder, tooltip, async () => {
+          const position = await computePosition(tooltipHolder, tooltip, {
+            placement: this.tooltipPlacement,
+            middleware: [
+              flip(),
+              inline(),
+              offset(() => ({
+                mainAxis: 10,
+              })),
+            ],
+          });
+
+          tooltip.dataset.placement = position.placement;
+
+          Object.assign(tooltip.style, {
+            left: '0',
+            top: '0',
+            transform: `translate(${Math.round(position.x)}px,${Math.round(position.y)}px)`,
+          });
         });
       },
 
@@ -173,7 +185,7 @@
         this.isOpen = true;
 
         setTimeout(() => {
-          this.popper?.forceUpdate();
+          this.initialize();
         });
       },
 
@@ -181,6 +193,8 @@
         if (this.trigger !== trigger) {
           return;
         }
+
+        this.cleanupAutoUpdate?.();
 
         this.isOpen = false;
       },

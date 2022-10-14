@@ -1,6 +1,12 @@
 $dark-bg: #000;
 $light-bg: #fff;
 
+#tooltip-container {
+  position: fixed;
+  width: 0;
+  height: 0;
+}
+
 .tooltip {
   width: 100vw;
   box-shadow: 0px 0px 0px rgba(30, 30, 30, .5);
@@ -41,7 +47,7 @@ $light-bg: #fff;
     }
   }
 
-  &[data-popper-placement="bottom"] {
+  &[data-placement="bottom"] {
     .tooltip-container {
       &::after {
          top: auto;
@@ -51,7 +57,7 @@ $light-bg: #fff;
     }
   }
 
-  &[data-popper-placement="right"] {
+  &[data-placement="right"] {
     .tooltip-container {
       &::after {
        top: 50%;
@@ -62,7 +68,7 @@ $light-bg: #fff;
     }
   }
 
-  &[data-popper-placement="left"] {
+  &[data-placement="left"] {
     .tooltip-container {
       &::after {
        top: auto;
