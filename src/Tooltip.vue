@@ -83,7 +83,6 @@
     computePosition,
     autoUpdate,
     flip,
-    inline,
     offset,
   } from '@floating-ui/dom';
   import props from './props';
@@ -148,7 +147,6 @@
             placement: this.tooltipPlacement,
             middleware: [
               flip(),
-              inline(),
               offset(() => ({
                 mainAxis: 10,
               })),
